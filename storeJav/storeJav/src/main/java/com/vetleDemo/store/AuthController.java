@@ -21,7 +21,7 @@ public class AuthController {
             @RequestParam("state") String state
     ) {
         try {
-            // 1) Exchange code for tokens (add -sS to curl to silence progress)
+            // Curl request
             ProcessBuilder tokenPb = new ProcessBuilder(
                     "curl",
                     "-sS",
@@ -50,12 +50,12 @@ public class AuthController {
                         .body("Token request failed: " + tokenJson);
             }
 
-            // 2) Extract access_token from JSON
+            // Extract access_token from JSON
             String accessToken = new com.fasterxml.jackson.databind.ObjectMapper()
                     .readTree(tokenJson.toString())
                     .get("access_token").asText();
 
-            // 3) Call Hello World endpoint with Bearer token
+            //Call response 
             ProcessBuilder accountPb = new ProcessBuilder(
                     "curl",
                     "-sS",
