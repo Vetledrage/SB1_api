@@ -14,7 +14,7 @@ public class AuthController {
 
     @Autowired
     private SparebankOauthConfig oauthConfig;
-
+    // Environment variables in .env ignored
     @GetMapping("/callback")
     public ResponseEntity<String> handleCallback(
             @RequestParam("code") String code,
