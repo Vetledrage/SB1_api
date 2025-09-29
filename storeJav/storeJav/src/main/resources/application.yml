@@ -1,0 +1,8 @@
+# src/main/resources/application.yml
+
+sparebank:
+  oauth:
+    client-id: ${SPAREBANK_CLIENT_ID}
+    client-secret: ${SPAREBANK_CLIENT_SECRET}
+    redirect-uri: http://localhost:8080/callback
+    token-uri: https://api.sparebank1.no/oauth/token
