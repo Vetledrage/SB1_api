@@ -15,7 +15,7 @@ class HomeControllerWebTest {
     private MockMvc mockMvc;
 
     @Test
-    void rootForwardsToIndexHtml() throws Exception {
+    void rootReturnsIndexHtmlViewName() throws Exception {
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("index.html"));
