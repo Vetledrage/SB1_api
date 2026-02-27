@@ -1,11 +1,11 @@
 package com.vetled.store
 
 import org.springframework.stereotype.Controller
+import org.springframework.web.bind.annotation.RequestMapping
 
 @Controller
 class HomeController {
-    public fun: String {
 
-    }
-
+    @RequestMapping("/")
+    fun index(): String = "index.html"
 }
