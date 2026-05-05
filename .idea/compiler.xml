@@ -7,6 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="store" />
+        <module name="store (2) (com.vetled)" />
+        <module name="store (1) (com.vetleDemo)" />
         <module name="store (1) (com.vetled)" />
       </profile>
     </annotationProcessing>
@@ -14,7 +16,9 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="store" options="-parameters" />
+      <module name="store (1) (com.vetleDemo)" options="-parameters" />
       <module name="store (1) (com.vetled)" options="-parameters" />
+      <module name="store (2) (com.vetled)" options="-parameters" />
     </option>
   </component>
 </project>

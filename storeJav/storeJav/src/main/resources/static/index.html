@@ -2,14 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>SpareBank 1 Login</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column;
+               align-items: center; justify-content: center; min-height: 100vh;
+               background: #f0f2f5; margin: 0; }
+        h1 { color: #003087; margin-bottom: 24px; }
+        a button {
+            background: #003087; color: white; border: none; padding: 12px 28px;
+            border-radius: 8px; font-size: 1rem; cursor: pointer;
+        }
+        a button:hover { background: #00256b; }
+        #error-box {
+            display: none; margin-top: 24px; background: #fee2e2; color: #991b1b;
+            border: 1px solid #fca5a5; border-radius: 8px; padding: 14px 20px;
+            max-width: 600px; word-break: break-all; font-size: .85rem;
+        }
+    </style>
 </head>
 <body>
-<h1>Sparebank 1 API call</h1>
-<a href="
-https://api.sparebank1.no/oauth/authorize?client_id=c3594748-3359-42ad-910f-7f31317900d8&state=6287315&redirect_uri=http://localhost:8080/callback&finInst=fid-sorost&response_type=code">
+<h1>SpareBank 1 API</h1>
+<a href="https://api.sparebank1.no/oauth/authorize?client_id=c7a35db2-95ef-4d4e-9eb7-d95632a5aa7e&state=6133368&redirect_uri=http://localhost:8080/callback&finInst=fid-smn&response_type=code">
     <button>Login with BankID</button>
 </a>
+<div id="error-box"></div>
 
+<script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('error')) {
+        const box = document.getElementById('error-box');
+        box.style.display = 'block';
+        box.textContent = '⚠ ' + decodeURIComponent(params.get('error'));
+    }
+</script>
 </body>
 </html>
